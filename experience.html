@@ -19,14 +19,17 @@
         /* Timeline */
         .timeline { position: relative; padding: 60px 0; }
         .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #e5e7eb; transform: translateX(-50%); }
-        .event { position: relative; min-height: 120px; margin: 50px 0; }
-        .event .marker { position: absolute; left: 50%; top: 28px; transform: translateX(-50%); width: 14px; height: 14px; background: #1f2937; border-radius: 50%; }
+        .event { position: relative; margin: 50px 0; padding: 10px 0; }
+        .event .marker { position: absolute; left: 50%; top: 18px; transform: translateX(-50%); width: 14px; height: 14px; background: #1f2937; border-radius: 50%; }
         /* CSUSM specific styling */
         .event.csusm .marker { background: #0b5ed7; }
         .event.csusm .content { border-left: 4px solid #0b5ed7; background: #f0f7ff; }
         .event.csusm h3 { color: #0b5ed7; }
-        /* All cards placed to the right of the center line for a clean stacked timeline */
-        .event .content { position: absolute; left: calc(50% + 24px); width: 44%; padding: 18px 22px; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: 1px solid rgba(17,24,39,0.04); }
+        /* Default: cards placed to the right of the center line, in normal flow so tall cards push content down */
+        .event .content { position: relative; display: block; margin-left: calc(50% + 24px); width: 44%; padding: 18px 22px; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: 1px solid rgba(17,24,39,0.04); text-align: left; }
+
+        /* Alternate: even events (2nd, 4th, ...) placed to the left of the center line */
+        .timeline .event:nth-child(even) .content { margin-left: 0; margin-right: calc(50% + 24px); text-align: right; }
         .event h3 { margin: 0 0 6px 0; color: #111827; }
         .event .meta { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
         .event ul { margin: 8px 0 0 18px; }
@@ -34,7 +37,8 @@
         @media (max-width: 900px) {
             .timeline::before { left: 12px; transform: none; }
             .event .marker { left: 12px; transform: none; }
-            .event .content { position: relative; left: 36px; width: calc(100% - 56px); margin: 12px 0 0 0; }
+            .event .content { position: relative; margin-left: 36px; margin-right: 0; width: calc(100% - 56px); margin-top: 12px; text-align: left; }
+            .timeline .event:nth-child(even) .content { margin-left: 36px; margin-right: 0; text-align: left; }
         }
     </style>
 </head>
