@@ -21,18 +21,16 @@
         .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #e5e7eb; transform: translateX(-50%); }
         .event { position: relative; min-height: 120px; margin: 50px 0; }
         .event .marker { position: absolute; left: 50%; top: 28px; transform: translateX(-50%); width: 14px; height: 14px; background: #1f2937; border-radius: 50%; }
-        .event .content { position: absolute; width: 36%; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: 1px solid rgba(17,24,39,0.04); }
-        .event .content.left { left: 0; }
-        .event .content.right { right: 0; }
+        /* All cards placed to the right of the center line for a clean stacked timeline */
+        .event .content { position: absolute; left: calc(50% + 24px); width: 44%; padding: 18px 22px; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: 1px solid rgba(17,24,39,0.04); }
         .event h3 { margin: 0 0 6px 0; color: #111827; }
         .event .meta { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
         .event ul { margin: 8px 0 0 18px; }
 
-        @media (max-width: 700px) {
-            .timeline::before { left: 8px; transform: none; }
-            .event .marker { left: 8px; transform: none; }
-            .event .content { position: relative; width: auto; margin-left: 36px; }
-            .event .content.left, .event .content.right { left: 0; right: 0; }
+        @media (max-width: 900px) {
+            .timeline::before { left: 12px; transform: none; }
+            .event .marker { left: 12px; transform: none; }
+            .event .content { position: relative; left: 36px; width: calc(100% - 56px); margin: 12px 0 0 0; }
         }
     </style>
 </head>
@@ -56,7 +54,7 @@
 
             <div class="event">
                 <div class="marker"></div>
-                <div class="content left">
+                <div class="content">
                     <h3>Data Analytics Trainee — San Diego, CA</h3>
                     <div class="meta">January 2026 – Present</div>
                     <ul>
@@ -68,7 +66,7 @@
 
             <div class="event">
                 <div class="marker"></div>
-                <div class="content right">
+                <div class="content">
                     <h3>NPower — IT Support Specialist Trainee — Los Angeles, CA</h3>
                     <div class="meta">August 2025 – December 2025</div>
                     <ul>
@@ -80,7 +78,7 @@
 
             <div class="event">
                 <div class="marker"></div>
-                <div class="content left">
+                <div class="content">
                     <h3>Flagsmith — SOSE Software Engineer Intern — London, England (Remote)</h3>
                     <div class="meta">June 2024 – January 2025</div>
                     <ul>
@@ -93,7 +91,7 @@
 
             <div class="event">
                 <div class="marker"></div>
-                <div class="content right">
+                <div class="content">
                     <h3>CSUSM Summer Scholar Program — Research Intern — San Marcos, CA</h3>
                     <div class="meta">May 2024 – August 2024</div>
                     <ul>
@@ -106,7 +104,7 @@
 
             <div class="event">
                 <div class="marker"></div>
-                <div class="content left">
+                <div class="content">
                     <h3>REU@UNOMAHA Security and Privacy — Research Intern — Omaha, NE</h3>
                     <div class="meta">May 2023 – July 2023</div>
                     <ul>
