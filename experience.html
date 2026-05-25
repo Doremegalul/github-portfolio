@@ -21,6 +21,10 @@
         .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: #e5e7eb; transform: translateX(-50%); }
         .event { position: relative; min-height: 120px; margin: 50px 0; }
         .event .marker { position: absolute; left: 50%; top: 28px; transform: translateX(-50%); width: 14px; height: 14px; background: #1f2937; border-radius: 50%; }
+        /* CSUSM specific styling */
+        .event.csusm .marker { background: #0b5ed7; }
+        .event.csusm .content { border-left: 4px solid #0b5ed7; background: #f0f7ff; }
+        .event.csusm h3 { color: #0b5ed7; }
         /* All cards placed to the right of the center line for a clean stacked timeline */
         .event .content { position: absolute; left: calc(50% + 24px); width: 44%; padding: 18px 22px; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: 1px solid rgba(17,24,39,0.04); }
         .event h3 { margin: 0 0 6px 0; color: #111827; }
@@ -89,7 +93,7 @@
                 </div>
             </div>
 
-            <div class="event">
+            <div class="event csusm">
                 <div class="marker"></div>
                 <div class="content">
                     <h3>CSUSM Summer Scholar Program — Research Intern — San Marcos, CA</h3>
