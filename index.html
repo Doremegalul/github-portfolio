@@ -3,149 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minh Tran | Data Engineering Portfolio</title>
+    <title>Minh Tran</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background-color: #f7f9fc;
-        }
-
-        header {
-            background-color: #1f2937;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-            font-size: 42px;
-        }
-
-        header p {
-            font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 20px;
-        }
-
-        nav {
-            background-color: #111827;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        h2 {
-            color: #1f2937;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 10px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills span {
-            background-color: #e5e7eb;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        .project, .experience {
-            margin-bottom: 25px;
-        }
-
-        .project h3, .experience h3 {
-            margin-bottom: 5px;
-            color: #2563eb;
-        }
-
-        .date {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #2563eb;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .button:hover {
-            background-color: #1d4ed8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #1f2937;
-            color: white;
-            margin-top: 40px;
-        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #222; background-color: #f7f9fc; }
+        header { background-color: #1f2937; color: white; padding: 40px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 42px; }
+        nav { background-color: #111827; padding: 12px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        section { max-width: 900px; margin: 32px auto; padding: 24px; background-color: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
+        h2 { color: #1f2937; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
+        .skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+        .skills span { background:#e5e7eb; padding:8px 12px; border-radius:20px; font-size:14px; }
     </style>
 </head>
 
 <body>
 
-    <!-- Header -->
     <header>
         <h1>Minh Tran</h1>
-        <p>
-            Data-focused software engineer building scalable Python ETL pipelines,
-            SQL-based data systems, and analytics workflows.
-        </p>
-
-        <a class="button" href="mailto:minhjtran2@gmail.com">Contact Me</a>
-        <a class="button" href="https://github.com/minhltran" target="_blank">GitHub</a>
-        <a class="button" href="https://linkedin.com/in/minhltran" target="_blank">LinkedIn</a>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
     </nav>
 
-    <!-- About -->
     <section id="about">
         <h2>About Me</h2>
         <p>
@@ -156,7 +41,6 @@
         </p>
     </section>
 
-    <!-- Skills -->
     <section id="skills">
         <h2>Technical Skills</h2>
 
@@ -178,107 +62,6 @@
             <span>REST APIs</span>
         </div>
     </section>
-
-    <!-- Experience -->
-    <section id="experience">
-        <h2>Professional Experience</h2>
-
-        <div class="experience">
-            <h3>Data Engineering and Analytics Training</h3>
-            <p class="date">San Diego, CA | October 2025 – Present</p>
-            <p>
-                Developing hands-on skills in Python, SQL, Spark, Pandas, and Power BI
-                through applied analytics projects.
-            </p>
-        </div>
-
-        <div class="experience">
-            <h3>NPower | IT Support Specialist Training</h3>
-            <p class="date">Los Angeles, CA | August 2025 – December 2025</p>
-            <p>
-                Completed 300+ hours of hands-on IT training in troubleshooting,
-                networking, and system administration. Earned CompTIA Tech+,
-                Google IT Support, and Azure certifications.
-            </p>
-        </div>
-
-        <div class="experience">
-            <h3>Flagsmith | SOSE Software Engineer Intern</h3>
-            <p class="date">Remote | June 2024 – January 2025</p>
-            <p>
-                Built Python ETL pipelines integrating API data across multiple environments
-                to support internal analytics and operational reporting. Developed a real-time
-                metrics pipeline processing 1,000+ daily identity events with structured logging
-                and automated validation.
-            </p>
-        </div>
-
-        <div class="experience">
-            <h3>REU@UNOMAHA Security and Privacy | Computer Science Research Intern</h3>
-            <p class="date">Omaha, NE | May 2023 – July 2023</p>
-            <p>
-                Applied static analysis and secure coding techniques to evaluate embedded and IoT
-                codebases, identifying and resolving 100+ vulnerabilities. Designed and tested
-                IoT-based detection systems using Linux, Raspberry Pi, and C.
-            </p>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Highlighted Projects</h2>
-
-        <div class="project">
-            <h3>Candy Sales Data Mart ETL Project</h3>
-            <p class="date">SQL, Data Engineering, GitHub | Jan 2026 – March 2026</p>
-            <p>
-                Designed and implemented a SQL-based ETL pipeline to consolidate three years
-                of legacy sales datasets into a unified staging table for analytics and reporting.
-                The project included schema standardization, discount logic, shipment quantity
-                cleaning, checksum testing, and record-level validation.
-            </p>
-            <a class="button" href="#" target="_blank">View Project</a>
-        </div>
-
-        <div class="project">
-            <h3>Weather Images Deep Learning</h3>
-            <p class="date">Python, Pandas, SQL, VS Code, GitHub | Jan 2025 – May 2025</p>
-            <p>
-                Built a data pipeline for 38,000+ image and weather records to support
-                cloud-cover classification. Developed CNN models with weather features,
-                reproducible training workflows, class balancing, and performance tracking.
-            </p>
-            <a class="button" href="#" target="_blank">View Project</a>
-        </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education">
-        <h2>Education</h2>
-
-        <h3>California State University San Marcos</h3>
-        <p>
-            B.S. in Computer Science, Cum Laude<br>
-            CSU Trustees’ Award for Outstanding Achievement<br>
-            Dean’s List<br>
-            Graduated May 2025
-        </p>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
-
-        <p>Email: <a href="mailto:minhjtran2@gmail.com">minhjtran2@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/minhltran" target="_blank">github.com/minhltran</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/minhltran" target="_blank">linkedin.com/in/minhltran</a></p>
-        <p>Location: Carlsbad, CA</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Minh Tran. Built with HTML and CSS.</p>
-    </footer>
 
 </body>
 </html>
