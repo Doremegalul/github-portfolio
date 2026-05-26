@@ -15,6 +15,25 @@
         nav a:hover { text-decoration: underline; }
 
         .container { max-width: 900px; margin: 32px auto; padding: 24px; }
+        .container h2 {
+            text-align: center;
+            margin: 0 0 12px 0;
+            font-size: 28px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #111827;
+            position: relative;
+            font-weight: 800;
+        }
+        .container h2::after {
+            content: '';
+            display: block;
+            width: 84px;
+            height: 4px;
+            margin: 12px auto 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #111827, #0b5ed7);
+        }
 
         /* Timeline */
         .timeline { position: relative; padding: 60px 0; }
@@ -59,6 +78,19 @@
         <h2>Timeline</h2>
 
         <div class="timeline">
+
+            <div class="event">
+                <div class="marker"></div>
+                <div class="content">
+                    <h3>Retail Sales Associate — Staples · Part-time — Carlsbad, California, United States · On-site</h3>
+                    <div class="meta">Feb 2026 – Present · 4 mos</div>
+                    <ul>
+                        <li>Assisted 100 - 150 customers per shift with purchases, returns, Amazon Returns, and product questions while troubleshooting workflow issues and guiding customers through platform-based return processes.</li>
+                        <li>Provided technical customer support for devices and accessories, including recommending compatible USB-C cables, chargers, printer ink, and laptop accessories, as well as performing basic laptop and product troubleshooting.</li>
+                        <li>Operated POS systems, processed cash/card transactions, managed high-volume checkout and return lines, and resolved printer/equipment issues such as paper jams, setup errors, and operational problems in a fast-paced retail environment.</li>
+                    </ul>
+                </div>
+            </div>
 
             <div class="event">
                 <div class="marker"></div>
@@ -119,6 +151,33 @@
                         <li>Applied static analysis and formal verification to identify and resolve 100+ critical system vulnerabilities in embedded C firmware for IoT devices.</li>
                         <li>Developed automated vulnerability detection workflows to improve system reliability and safety of resource-constrained embedded systems. Product demo: (Link)</li>
                         <li>Presented this project at the MobiHoc '23 ACM conference and published a corresponding paper.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="marker"></div>
+                <div class="content">
+                    <h3>Project Intern — Computing Talent Initiative Accelerate Cohort · Full-time — Remote</h3>
+                    <div class="meta">Sep 2022 – Apr 2024 · 1 yr 8 mos</div>
+                    <ul>
+                        <li>Supported the CTI in its mission "to prepare computer science students, particularly students from low-income, first-generation, URM backgrounds, to be competitive for opportunities in and to make significant contributions to the tech industry."</li>
+                        <li>Work with a cohort of 750+ students as we prepared for a meaningful summer professional computer science experience, either in industry, research, or the open-source space.</li>
+                        <li>Spent at least 10 hours per week working with students and CTI content to develop problem-solving for interviews; Python proficiency; GitHub and open-source project contribution; Teamwork; Professional Networking; Cultural Humility and Professionalism. All while working remotely.</li>
+                        <li>Involving in multiple open-source projects relating to algorithm, web development, and Python & JavaScript coding.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="marker"></div>
+                <div class="content">
+                    <h3>Telecom & Network Operations Student Assistant — CSUSM - Instructional & information Technology Services · Part-time — San Macros, California, United States</h3>
+                    <div class="meta">Jun 2022 – Jul 2022 · 2 mos</div>
+                    <ul>
+                        <li>Worked on 100+ work orders in the FileMaker Pro 19.</li>
+                        <li>Directed 50+ calls to appropriate offices.</li>
+                        <li>Assisted with faculties on managing phones and cables.</li>
                     </ul>
                 </div>
             </div>
