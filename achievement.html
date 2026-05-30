@@ -23,7 +23,39 @@
             padding: 8px 16px;
             border-radius: 999px;
         }
-        .container { max-width: 900px; margin: 32px auto; padding: 20px; }
+        .container { max-width: 900px; margin: 32px auto; padding: 24px; }
+
+        /* Match Experience page heading style */
+        .container h2 {
+            text-align: center;
+            margin: 0 0 12px 0;
+            font-size: 28px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #111827;
+            position: relative;
+            font-weight: 800;
+        }
+        .container h2::after {
+            content: '';
+            display: block;
+            width: 84px;
+            height: 4px;
+            margin: 12px auto 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #111827, #0b5ed7);
+        }
+
+        /* Boxes similar to index main sections */
+        .boxes { display:flex; flex-wrap:wrap; gap:16px; margin-top:18px; }
+        .box { flex: 1 1 calc(33.333% - 10px); min-width:220px; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); border: 1px solid rgba(17,24,39,0.04); padding: 18px; }
+        .box h3 { margin-top: 0; color: #111827; font-size:16px; }
+        .box p, .box ul { margin: 8px 0 0 0; color: #374151; font-size:14px; }
+
+        @media (max-width: 900px) {
+            .boxes { flex-direction: column; }
+            .box { flex: 1 1 100%; }
+        }
     </style>
 </head>
 <body>
@@ -40,6 +72,35 @@
     <div class="container">
         <h2>Achievements</h2>
         <p>This is a test page for the Achievement tab.</p>
+
+        <div class="boxes">
+            <section class="box">
+                <h3>Award</h3>
+                <p>Selected awards and honors:</p>
+                <ul>
+                    <li>Best Poster — MobiHoc '23</li>
+                    <li>Dean's List — CSUSM</li>
+                </ul>
+            </section>
+
+            <section class="box">
+                <h3>Degree and Certification</h3>
+                <p>Academic degrees and professional certifications:</p>
+                <ul>
+                    <li>B.Sc. in Computer Science — CSUSM (expected 2024)</li>
+                    <li>CompTIA Tech+, Google IT Support, Azure Fundamentals</li>
+                </ul>
+            </section>
+
+            <section class="box">
+                <h3>Publication Paper</h3>
+                <p>Selected publications and conference papers:</p>
+                <ul>
+                    <li>Privacy-preserving firmware verification — MobiHoc '23 (presentation)</li>
+                    <li>AI detection pipeline evaluation — CSUSM Summer Scholar report</li>
+                </ul>
+            </section>
+        </div>
     </div>
 </body>
 </html>
