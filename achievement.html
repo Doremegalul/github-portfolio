@@ -46,16 +46,12 @@
             background: linear-gradient(90deg, #111827, #0b5ed7);
         }
 
-        /* Boxes similar to index main sections */
-        .boxes { display:flex; flex-wrap:wrap; gap:16px; margin-top:18px; }
-        .box { flex: 1 1 calc(33.333% - 10px); min-width:220px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 1px solid rgba(17,24,39,0.04); padding: 24px; }
+        /* Boxes styled as full-width sections like the main About/Skills sections */
+        .boxes { display:block; margin-top:18px; }
+        .box { width: 100%; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 1px solid rgba(17,24,39,0.04); padding: 24px; margin-bottom: 18px; }
+        .box:last-child { margin-bottom: 0; }
         .box h3 { margin-top: 0; color: #1f2937; font-size:18px; font-weight:700; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-bottom: 12px; }
         .box p, .box ul { margin: 8px 0 0 0; color: #374151; font-size:14px; }
-
-        @media (max-width: 900px) {
-            .boxes { flex-direction: column; }
-            .box { flex: 1 1 100%; }
-        }
     </style>
 </head>
 <body>

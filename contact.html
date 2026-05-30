@@ -23,8 +23,26 @@
             padding: 8px 16px;
             border-radius: 999px;
         }
-        .container { max-width: 900px; margin: 32px auto; padding: 20px; }
-        .container h2 { text-align: center; margin: 0 0 12px 0; font-size: 28px; }
+        .container { max-width: 900px; margin: 32px auto; padding: 24px; }
+        .container h2 {
+            text-align: center;
+            margin: 0 0 12px 0;
+            font-size: 28px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #111827;
+            position: relative;
+            font-weight: 800;
+        }
+        .container h2::after {
+            content: '';
+            display: block;
+            width: 84px;
+            height: 4px;
+            margin: 12px auto 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #111827, #0b5ed7);
+        }
         .contact-list {
             display: grid;
             gap: 16px;
@@ -108,7 +126,7 @@
                 </div>
                 <div class="contact-text">
                     <div class="contact-label">GitHub</div>
-                    <a href="https://github.com/minhltran" target="_blank" rel="noopener noreferrer">github.com/minhltran</a>
+                    <a href="https://github.com/Doremegalul" target="_blank" rel="noopener noreferrer">github.com/Doremegalul</a>
                 </div>
             </div>
         </div>
