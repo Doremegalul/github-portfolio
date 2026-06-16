@@ -6,11 +6,36 @@
     <title>Minh Tran</title>
 
     <style>
-        * { box-sizing: border-box; }
-        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #222; background-color: #f7f9fc; }
-        header { background-color: #1f2937; color: white; padding: 40px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 42px; }
-        nav { background-color: #111827; padding: 12px; text-align: center; }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background-color: #f7f9fc;
+        }
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        nav {
+            background-color: #111827;
+            padding: 12px;
+            text-align: center;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -23,11 +48,230 @@
             padding: 8px 16px;
             border-radius: 999px;
         }
-        nav a:hover { text-decoration: underline; }
-        section { max-width: 900px; margin: 32px auto; padding: 24px; background-color: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); }
-        h2 { color: #1f2937; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
-        .skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
-        .skills span { background:#e5e7eb; padding:8px 12px; border-radius:20px; font-size:14px; }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .main-grid {
+            max-width: 1300px;
+            margin: 32px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 0.9fr 1.8fr 0.9fr;
+            grid-template-areas: "position middle project";
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .position-card {
+            grid-area: position;
+        }
+
+        .middle-column {
+            grid-area: middle;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-card {
+            grid-area: project;
+        }
+
+        .top-card,
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            border: 1px solid rgba(17,24,39,0.06);
+        }
+
+        .top-card {
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-card h2,
+        h2.section-title {
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+            margin: 0 0 16px 0;
+            font-size: 26px;
+        }
+
+        #about {
+            min-height: 390px;
+            padding: 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #about p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .position-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #111827;
+            margin: 0 0 8px 0;
+        }
+
+        .position-meta,
+        .project-meta {
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 12px;
+        }
+
+        .top-card p,
+        .content-section p {
+            color: #374151;
+        }
+
+        .top-card ul {
+            margin: 0 0 16px 18px;
+            padding: 0;
+            color: #4b5563;
+        }
+
+        .top-card li {
+            margin-bottom: 8px;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .btn-primary {
+            background: #0b5ed7;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #eef2ff;
+            color: #111827;
+        }
+
+        .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #fee2e2;
+            color: #991b1b;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .project-image-preview {
+            margin-top: 10px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            background: #111827;
+        }
+
+        .project-image-preview img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .skills span {
+            padding: 8px 13px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid transparent;
+        }
+
+        .skill-programming {
+            background: #dbeafe;
+            color: #1e40af;
+            border-color: #bfdbfe;
+        }
+
+        .skill-data {
+            background: #dcfce7;
+            color: #166534;
+            border-color: #bbf7d0;
+        }
+
+        .skill-ai {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border-color: #e9d5ff;
+        }
+
+        .skill-cloud {
+            background: #ffedd5;
+            color: #9a3412;
+            border-color: #fed7aa;
+        }
+
+        .skill-it {
+            background: #fee2e2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+
+        @media (max-width: 1000px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "middle"
+                    "position"
+                    "project";
+            }
+
+            #about {
+                min-height: auto;
+                padding: 28px;
+            }
+
+            #about p {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+        }
     </style>
 </head>
 
@@ -45,37 +289,104 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a data-focused software engineer interested in data engineering,
-            backend data systems, ETL pipelines, analytics, and machine learning data workflows.
-            I enjoy building reliable systems that clean, transform, validate, and organize data
-            for reporting, dashboards, and model development.
-        </p>
-    </section>
+    <main class="main-grid">
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
+        <section class="top-card position-card">
+            <h2>Current Position</h2>
+            <div class="position-title">Retail Sales Associate — Staples</div>
+            <div class="position-meta">Carlsbad, CA · Feb 2026 – Present</div>
+            <p>
+                Working in a fast-paced retail environment supporting customers,
+                troubleshooting products, and handling checkout and returns.
+            </p>
+            <ul>
+                <li>Help customers with product questions, returns, and basic troubleshooting.</li>
+                <li>Process POS transactions and manage high-volume checkout lines.</li>
+                <li>Recommend compatible devices, accessories, and printer supplies.</li>
+            </ul>
+            <div class="card-actions">
+                <a class="btn-primary" href="experience.html">View Experience</a>
+            </div>
+        </section>
 
-        <div class="skills">
-            <span>Python</span>
-            <span>SQL</span>
-            <span>ETL Pipelines</span>
-            <span>Data Modeling</span>
-            <span>Batch Processing</span>
-            <span>Data Validation</span>
-            <span>Pandas</span>
-            <span>Power BI</span>
-            <span>SQLite</span>
-            <span>MS SQL Server</span>
-            <span>Microsoft Azure</span>
-            <span>Docker</span>
-            <span>Git</span>
-            <span>Linux</span>
-            <span>REST APIs</span>
+        <div class="middle-column">
+
+            <section id="about" class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    I am a computer science practitioner with hands-on experience across software engineering,
+                    data engineering, AI evaluation, and technical support. My work focuses on building reliable
+                    Python and SQL-based systems for data processing, analytics, automation, and machine learning workflows.
+                </p>
+                <p>
+                    I enjoy solving practical technical problems, from developing ETL pipelines and validation workflows
+                    to troubleshooting hardware, software, and customer-facing technology issues. My background combines
+                    academic research, applied projects, and real-world support experience, with a strong interest in
+                    backend data systems, cloud tools, AI-assisted workflows, and dependable software solutions.
+                </p>
+            </section>
+
+            <section id="skills" class="content-section">
+                <h2 class="section-title">Technical Skills</h2>
+
+                <div class="skills">
+                    <span class="skill-programming">Python</span>
+                    <span class="skill-programming">SQL</span>
+                    <span class="skill-programming">C++</span>
+
+                    <span class="skill-data">ETL Pipelines</span>
+                    <span class="skill-data">Data Modeling</span>
+                    <span class="skill-data">Data Validation</span>
+                    <span class="skill-data">Batch Processing</span>
+                    <span class="skill-data">Real-Time Workflows</span>
+                    <span class="skill-data">Pandas</span>
+                    <span class="skill-data">Power BI</span>
+
+                    <span class="skill-ai">Machine Learning</span>
+                    <span class="skill-ai">PyTorch</span>
+                    <span class="skill-ai">TensorFlow</span>
+                    <span class="skill-ai">scikit-learn</span>
+                    <span class="skill-ai">Prompt Engineering</span>
+                    <span class="skill-ai">AI Evaluation</span>
+
+                    <span class="skill-cloud">Microsoft Azure</span>
+                    <span class="skill-cloud">Docker</span>
+                    <span class="skill-cloud">Git/GitHub</span>
+                    <span class="skill-cloud">Linux</span>
+                    <span class="skill-cloud">REST APIs</span>
+
+                    <span class="skill-it">Troubleshooting</span>
+                    <span class="skill-it">Networking Basics</span>
+                    <span class="skill-it">Windows/Linux Support</span>
+                    <span class="skill-it">Hardware & Software Support</span>
+                </div>
+            </section>
+
         </div>
-    </section>
+
+        <section class="top-card project-card">
+            <div class="highlight-badge">Latest Highlight</div>
+            <h2>Auto Extraction Music Script</h2>
+            <div class="project-meta">Last update: 6/15/2026</div>
+            <p>
+                My latest project is a Python-based music extraction pipeline that batch downloads
+                and organizes audio from YouTube playlists.
+            </p>
+            <ul>
+                <li>Uses yt-dlp and FFmpeg for high-quality MP3 extraction.</li>
+                <li>Automates playlist processing and file organization.</li>
+                <li>Shown in the project page with screenshots and captions.</li>
+            </ul>
+            <div class="project-image-preview">
+                <img src="Project_Images/Auto_Extraction_Music_Script_Images/1.png" alt="Auto Extraction Music Script preview">
+            </div>
+            <div class="card-actions">
+                <a class="btn-primary" href="project.html">View Project</a>
+                <a class="btn-secondary" href="https://github.com/Doremegalul/Auto_Extraction_Music_Script" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
