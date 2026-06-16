@@ -25,7 +25,7 @@
         }
         nav a:hover { text-decoration: underline; }
 
-        .container { max-width: 900px; margin: 32px auto; padding: 24px; }
+        .container { max-width: 1100px; margin: 32px auto; padding: 24px; }
         .container h2 {
             text-align: center;
             margin: 0 0 12px 0;
@@ -45,9 +45,257 @@
             border-radius: 999px;
             background: linear-gradient(90deg, #111827, #0b5ed7);
         }
+
+        .project-strip {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(17, 24, 39, 0.06);
+            overflow: hidden;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+        .project-card.active {
+            border-color: rgba(11, 94, 215, 0.45);
+            box-shadow: 0 14px 26px rgba(11, 94, 215, 0.14);
+            transform: translateY(-2px);
+        }
+        .project-card button {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 16px;
+            cursor: pointer;
+            text-align: left;
+        }
+        .project-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 19px;
+            color: #111827;
+        }
+        .project-card-date {
+            display: inline-flex;
+            margin-bottom: 10px;
+            color: #6b7280;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .project-card p {
+            margin: 0;
+            color: #4b5563;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .project-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 40;
+            display: grid;
+            place-items: center;
+            padding: 18px;
+            background: rgba(15, 23, 42, 0.58);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+        .project-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .project-modal-card {
+            width: min(1180px, 100%);
+            max-height: 92vh;
+            overflow: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transform: scale(0.96);
+            transition: transform 0.25s ease;
+        }
+        .project-modal.open .project-modal-card {
+            transform: scale(1);
+        }
+        .project-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 18px 20px 14px;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+        .project-modal-header h3 {
+            margin: 0;
+            font-size: 26px;
+            color: #111827;
+        }
+        .project-modal-close {
+            border: none;
+            background: #111827;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .project-modal-body {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+        }
+        .project-modal-copy {
+            padding: 20px;
+        }
+        .project-date {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 10px;
+            margin: 0 0 12px 0;
+            border-radius: 999px;
+            background: #e0f2fe;
+            color: #0c4a6e;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .project-modal-copy p {
+            margin: 0 0 14px 0;
+            color: #374151;
+            font-size: 14px;
+        }
+        .project-modal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .project-modal-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .btn-primary {
+            background: #0b5ed7;
+            color: white;
+        }
+        .project-modal-media {
+            background: #0f172a;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            min-height: 460px;
+            gap: 12px;
+        }
+        .gallery-frame {
+            position: relative;
+            background: #111827;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-modal-media img {
+            width: 100%;
+            height: 100%;
+            max-height: 420px;
+            object-fit: contain;
+            display: block;
+        }
+        .gallery-caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 12px 14px;
+            color: white;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0), rgba(15, 23, 42, 0.9));
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .gallery-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        .gallery-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .gallery-buttons button {
+            border: none;
+            cursor: pointer;
+            font-weight: 800;
+            border-radius: 999px;
+            padding: 9px 14px;
+            background: #e5e7eb;
+            color: #111827;
+        }
+        .gallery-buttons button.active {
+            background: #0b5ed7;
+            color: white;
+        }
+        .gallery-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .gallery-nav button {
+            width: 34px;
+            height: 34px;
+            border: none;
+            border-radius: 999px;
+            background: #e5e7eb;
+            color: #111827;
+            cursor: pointer;
+            font-weight: 800;
+        }
+        .gallery-nav button.active {
+            background: #0b5ed7;
+            color: white;
+        }
+        .project-modal-placeholder {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            max-width: 260px;
+            line-height: 1.5;
+        }
+        @media (max-width: 800px) {
+            .project-modal-body {
+                grid-template-columns: 1fr;
+            }
+            .project-modal-media {
+                min-height: 360px;
+            }
+        }
     </style>
 </head>
-
 <body>
 
     <header>
@@ -63,9 +311,254 @@
     </nav>
 
     <div class="container">
-        <h2>test</h2>
+        <h2>Projects</h2>
 
+        <section class="project-strip" id="project-list"></section>
     </div>
+
+    <div id="project-modal" class="project-modal" aria-hidden="true">
+        <div class="project-modal-card" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+            <div class="project-modal-header">
+                <h3 id="detail-title"></h3>
+                <button id="modal-close" class="project-modal-close" type="button" aria-label="Close project details">×</button>
+            </div>
+            <div class="project-modal-body">
+                <div class="project-modal-copy">
+                    <div id="detail-date" class="project-date"></div>
+                    <p id="detail-description"></p>
+                    <div class="project-modal-links">
+                        <a id="detail-github" class="btn-primary" href="#" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </div>
+                </div>
+                <div id="detail-media" class="project-modal-media"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projects = [
+            {
+                title: 'Auto Extraction Music Script',
+                date: '2026-06-15',
+                link: 'https://github.com/Doremegalul/Auto_Extraction_Music_Script',
+                description: 'Developed a Python-based music extraction pipeline to batch download and organize audio from YouTube playlists, reducing manual processing for large music libraries.',
+                tags: ['Python', 'Automation', 'Audio'],
+                gallery: [
+                    {
+                        src: 'Project_Images/Auto_Extraction_Music_Script_Images/1.png',
+                        alt: 'A glimpse into the code',
+                        caption: 'A glimpse into the code'
+                    },
+                    {
+                        src: 'Project_Images/Auto_Extraction_Music_Script_Images/2.png',
+                        alt: 'yt_dlp integration',
+                        caption: 'yt_dlp integration'
+                    },
+                    {
+                        src: 'Project_Images/Auto_Extraction_Music_Script_Images/3.png',
+                        alt: 'pathlib import Path',
+                        caption: 'pathlib import Path'
+                    },
+                    {
+                        src: 'Project_Images/Auto_Extraction_Music_Script_Images/4.png',
+                        alt: 'Downloading video',
+                        caption: 'Downloading video'
+                    },
+                    {
+                        src: 'Project_Images/Auto_Extraction_Music_Script_Images/5.png',
+                        alt: 'MP3 output',
+                        caption: 'MP3 output'
+                    },
+                    {
+                        src: 'Project_Images/Auto_Extraction_Music_Script_Images/6.jpg',
+                        alt: 'The mime jumpscare',
+                        caption: 'The mime jumpscare'
+                    }
+                ]
+            },
+            {
+                title: 'Candy Sales Data Mart ETL Project',
+                date: '2026-05-13',
+                link: 'https://github.com/Doremegalul/Candy_Sales_Data_Mart_ETL_Project#candy-sales-data-mart-etl-project',
+                description: 'Designed and implemented a SQL-based ETL pipeline to consolidate three years of legacy sales datasets into a unified staging table for analytics and reporting.',
+                tags: ['SQL', 'ETL', 'Data Mart'],
+                image: null,
+                imageAlt: ''
+            },
+            {
+                title: 'Weather Images Deep Learning',
+                date: '2026-02-20',
+                link: 'https://github.com/Doremegalul/Weather_Images_Deep_Learning',
+                description: 'A deep learning project that classifies road surface conditions using roadside images and weather data. It tackles winter road monitoring with a custom dataset from public sources and weather APIs.',
+                tags: ['Deep Learning', 'Python', 'Computer Vision'],
+                image: null,
+                imageAlt: ''
+            },
+            {
+                title: 'Client Server Chatroom',
+                date: '2024-12-15',
+                link: 'https://github.com/Doremegalul/Client_Server_Chatroom#client-server-chatroom',
+                description: 'A client-server chatroom application built with Python and TCP socket programming for real-time messaging, chat history, and file sharing.',
+                tags: ['Python', 'Sockets', 'Networking'],
+                image: null,
+                imageAlt: ''
+            },
+            {
+                title: 'OpenAI-SummerScholar',
+                date: '2024-08-12',
+                link: 'https://github.com/Doremegalul/OpenAI-SummerScholar#openai-summerscholar',
+                description: 'A Summer Scholar project at CSUSM that uses AI to detect plagiarism and provide both an accuracy score and reasoning using the OpenAI API.',
+                tags: ['OpenAI', 'AI', 'Research'],
+                image: null,
+                imageAlt: ''
+            }
+        ];
+
+        const projectList = document.getElementById('project-list');
+        const projectModal = document.getElementById('project-modal');
+        const modalClose = document.getElementById('modal-close');
+        const detailTitle = document.getElementById('detail-title');
+        const detailDate = document.getElementById('detail-date');
+        const detailDescription = document.getElementById('detail-description');
+        const detailGithub = document.getElementById('detail-github');
+        const detailMedia = document.getElementById('detail-media');
+
+        let activeIndex = -1;
+        let activeGalleryIndex = 0;
+        let activeGallery = [];
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' });
+        }
+
+        function renderDetail(project) {
+            detailTitle.textContent = project.title;
+            detailDate.textContent = `Last update: ${formatDate(project.date)}`;
+            detailDescription.textContent = project.description;
+            detailGithub.href = project.link;
+
+            if (project.gallery && project.gallery.length) {
+                activeGallery = project.gallery;
+                activeGalleryIndex = 0;
+                renderGallery();
+            } else {
+                detailMedia.innerHTML = '<div class="project-modal-placeholder">Image later. This project will show a screenshot, GIF, or video here.</div>';
+            }
+        }
+
+        function renderGallery() {
+            const slide = activeGallery[activeGalleryIndex];
+            detailMedia.innerHTML = `
+                <div class="gallery-frame">
+                    <img src="${slide.src}" alt="${slide.alt}">
+                    <div class="gallery-caption">${slide.caption}</div>
+                </div>
+                <div class="gallery-controls">
+                    <div class="gallery-buttons">
+                        <button type="button" data-gallery-action="prev">Previous</button>
+                        <button type="button" data-gallery-action="next">Next</button>
+                    </div>
+                    <div class="gallery-nav">
+                        ${activeGallery.map((_, index) => `<button type="button" data-gallery-index="${index}" class="${index === activeGalleryIndex ? 'active' : ''}">${index + 1}</button>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateGallery(direction) {
+            activeGalleryIndex = (direction + activeGallery.length) % activeGallery.length;
+            renderGallery();
+        }
+
+        function openProject(index) {
+            activeIndex = index;
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, cardIndex) => {
+                const button = card.querySelector('button');
+                const isActive = cardIndex === activeIndex;
+                card.classList.toggle('active', isActive);
+                button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+            });
+
+            renderDetail(projects[activeIndex]);
+            projectModal.classList.add('open');
+            projectModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProject() {
+            projectModal.classList.remove('open');
+            projectModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            activeIndex = -1;
+            document.querySelectorAll('.project-card').forEach((card) => {
+                card.classList.remove('active');
+                card.querySelector('button').setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        projects
+            .slice()
+            .sort((left, right) => new Date(right.date) - new Date(left.date))
+            .forEach((project, index) => {
+                const card = document.createElement('article');
+                card.className = 'project-card';
+                card.innerHTML = `
+                    <button type="button" aria-expanded="false">
+                        <h3>${project.title}</h3>
+                        <span class="project-card-date">${formatDate(project.date)}</span>
+                        <p>${project.description}</p>
+                    </button>
+                `;
+
+                card.querySelector('button').addEventListener('click', () => {
+                    const sortedIndex = Array.from(projectList.children).indexOf(card);
+                    if (sortedIndex === activeIndex && projectModal.classList.contains('open')) {
+                        closeProject();
+                        return;
+                    }
+                    openProject(sortedIndex);
+                });
+
+                projectList.appendChild(card);
+            });
+
+        modalClose.addEventListener('click', closeProject);
+        projectModal.addEventListener('click', (event) => {
+            if (event.target === projectModal) {
+                closeProject();
+            }
+        });
+
+        detailMedia.addEventListener('click', (event) => {
+            const button = event.target.closest('button');
+            if (!button || !activeGallery.length) return;
+
+            const galleryIndex = button.dataset.galleryIndex;
+            const galleryAction = button.dataset.galleryAction;
+
+            if (galleryIndex !== undefined) {
+                activeGalleryIndex = Number(galleryIndex);
+                renderGallery();
+                return;
+            }
+
+            if (galleryAction === 'prev') {
+                updateGallery(activeGalleryIndex - 1);
+            }
+
+            if (galleryAction === 'next') {
+                updateGallery(activeGalleryIndex + 1);
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && projectModal.classList.contains('open')) {
+                closeProject();
+            }
+        });
+    </script>
 
 </body>
 </html>
